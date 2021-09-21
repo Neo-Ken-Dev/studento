@@ -1,23 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}Studento {% endblock %}</title>
 </head>
-<body>
-<header>
-    <nav>
-        <h1>STUDENTO</h1>
-    </nav>
-</header>
 
-<main>
-    {% block body %}{% endblock %}
-</main>
-<footer>
-    <div>
-        <p>Design by: Dorian & Ken</p>
-    </div>
-</footer>
+<body>
+<div>
+    <header>
+        <nav>
+            <img src="{{ asset('img/logo200x250.png') }}" alt="logoStudento" />
+            <ul>
+                <li><a href="">Tour</a></li>
+                <li><a href="">Cours</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+            <button>Se connecter</button>
+        </nav>
+    </header>
+    <main>
+        {% block main %}{% endblock %}
+    </main>
+    <footer>
+        <div>
+            <p>Design by: Dorian & Ken</p>
+        </div>
+    </footer>
+</div>
 
 </body>
 </html>

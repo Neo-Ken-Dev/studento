@@ -3,12 +3,15 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
 {
-
-    public function index()
+    /**
+     * @Route("/")
+     */
+    public function home()
     {
-       return $this->render('base.html.twig');
+       return $this->render('default/home.html.twig');
     }
 }
