@@ -50,3 +50,16 @@
 #HomeSection2__Courses p {
    text-align: center;
 }
+
+#HomeSection3>img{
+   float: left;
+   margin: 0 50px;
+}
+
+#HomeSection3__Benefits {
+   display: flex;
+   flex-direction: column;
+   height: 600px;
+   justify-content: space-around;
+   align-items: center;
+}
