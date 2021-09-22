@@ -8,6 +8,7 @@
 body{
     font-family: "Arial", sans-serif;
     font-size: 15px;
+    height: 100%;
 }
 
 ul{
@@ -22,16 +23,25 @@ hr {
     width: 100%;
     border-top: 2px solid black;
 }
-
-
-/*header*/
-
 header{
     width: 70%;
     margin: 0 auto;
     padding: 0 10px;
     height: 80px;
 }
+
+main {
+    height: 100%;
+}
+footer{
+    height: 60px;
+}
+
+
+
+/*header*/
+
+
 
 header img {
     float: left;
@@ -68,4 +78,18 @@ header button {
 header button:hover {
     background: #f6f6f6 linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
 }
+ /*main*/
 
+
+
+/*footer*/
+
+footer h1{
+    text-align: center;
+}
+
+.copyright{
+    text-align: center;
+    font-weight: bold;
+    color: #777;
+}
