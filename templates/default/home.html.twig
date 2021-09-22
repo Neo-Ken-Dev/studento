@@ -1,7 +1,63 @@
 {% extends 'base.html.twig' %}
-
+{% block style %}{{ asset('css/homePage.css') }}{% endblock %}
 {% block title %}Accueil{% endblock %}
 
 {% block main %}
-<h1>Welcome</h1>
+    <section id="HomeSection1">
+        <div class="section1__text">
+            <h1>Comment fonctionne le site</h1>
+            <p>Apprendre à utiliser le site</p>
+            <button>Learn more</button>
+        </div>
+        <div><img src="{{ asset('img/homePage_video.png') }}" alt="video HomePage" /></div>
+    </section>
+    <hr>
+    <section>
+        <h1>Derniers cours</h1>
+        <div>
+            <div>
+                <img src="" alt="">
+                <h2>Cour 1</h2>
+                <p>Description du cour dans les grandes lignes.</p>
+            </div>
+            <div>
+                <img src="" alt="">
+                <h2>Cour 2</h2>
+                <p>Description du cour dans les grandes lignes.</p>
+            </div>
+            <div>
+                <img src="" alt="">
+                <h2>Cour 3</h2>
+                <p>Description du cour dans les grandes lignes.</p>
+            </div>
+
+        </div>
+    </section>
+    <hr>
+    <section>
+        <img src="" alt="">
+        <div>
+            <div>
+                <img src="" alt="">
+                <div>
+                    <h2>Benefit 1</h2>
+                    <p>Use this space to describe this benefit.</p>
+                </div>
+            </div>
+            <div>
+                <img src="" alt="">
+                <div>
+                    <h2>Benefit 2</h2>
+                    <p>Use this space to describe this benefit.</p>
+                </div>
+            </div>
+            <div>
+                <img src="" alt="">
+                <div>
+                    <h2>Benefit 3</h2>
+                    <p>Use this space to describe this benefit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

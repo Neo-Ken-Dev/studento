@@ -6,10 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <title>{% block title %}Studento {% endblock %}</title>
+    <link rel="stylesheet" href="{% block style %} {% endblock %}">
+    <title>{% block title %}Studento{% endblock %}</title>
 </head>
 
 <body>
+
     <header>
         <nav>
             <img src="{{ asset('img/logo60x80.png') }}" alt="logoStudento" />
@@ -18,17 +20,18 @@
                 <li><a href="">Cours</a></li>
                 <li><a href="">Contact</a></li>
                 <li> <button>Se connecter</button></li>
-
             </ul>
-
         </nav>
     </header>
+
     <hr>
+
     <main>
         {% block main %}{% endblock %}
     </main>
 
     <hr>
+
     <footer>
         <div>
             <h1>Studento</h1>
