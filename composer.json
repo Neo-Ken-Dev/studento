@@ -20,6 +20,7 @@
         "symfony/monolog-bundle": "^3.0",
         "symfony/proxy-manager-bridge": "4.4.*",
         "symfony/requirements-checker": "^2.0",
+        "symfony/security-bundle": "4.4.*",
         "symfony/yaml": "4.4.*"
     },
     "config": {
@@ -69,6 +70,7 @@
         }
     },
     "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "^3.4",
         "symfony/debug-bundle": "4.4.*",
         "symfony/stopwatch": "4.4.*",
         "symfony/web-profiler-bundle": "4.4.*"
