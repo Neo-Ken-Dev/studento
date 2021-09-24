@@ -19,7 +19,12 @@
                 <li><a href="">Tour</a></li>
                 <li><a href="">Cours</a></li>
                 <li><a href="">Contact</a></li>
-                <li> <button>Se connecter</button></li>
+
+                {%  if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                    <li> <a class="button" href="{{ path('logout') }}"> Se déconnecter</a></li>
+                {% else %}
+                    <li> <a class="button" href="{{ path('login') }}">Se connecter</a></li>
+                {% endif %}
             </ul>
         </nav>
     </header>

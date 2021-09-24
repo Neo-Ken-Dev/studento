@@ -1,0 +1,23 @@
+{% extends('base.html.twig') %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block main %}
+    <div>
+        <form method="post">
+            <h2>Connexion</h2>
+
+            <div>
+                <label for="loginUser">Identifiant :</label>
+                <input type="text" name="_username" id="loginUser" required autofocus>
+            </div>
+
+            <div>
+                <label for="loginPassword">Mot de passe :</label>
+                <input type="password" name="_password" id="loginPassword" required>
+            </div>
+
+            <button type="submit" >Connexion</button>
+        </form>
+    </div>
+{% endblock %}

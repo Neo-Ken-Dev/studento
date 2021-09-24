@@ -51,7 +51,7 @@ p{
     color: #798da3;
 }
 
-button {
+.button {
     background: #000000;
     border-radius: 10px;
     color: #FFFFFF;
@@ -80,7 +80,7 @@ header nav ul li a{
     float: left;
 }
 
-header button {
+header .button {
     margin-top: 25px;
     box-shadow:inset 0px 1px 0px 0px #ffffff;
     background: #ffffff linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
@@ -96,7 +96,7 @@ header button {
     text-shadow:0px 1px 0px #ffffff;
 }
 
-header button:hover {
+header .button:hover {
     background: #f6f6f6 linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
 }
 /*main*/
