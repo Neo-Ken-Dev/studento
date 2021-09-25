@@ -21,7 +21,18 @@
                 <li><a href="">Contact</a></li>
 
                 {%  if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-                    <li> <a class="button" href="{{ path('logout') }}"> Se déconnecter</a></li>
+                    <ul class="dropdown">
+                        <span>Param</span>
+                        <div class="dropdown-content">
+                            <ul>
+                                <li><a href="">Mon Profil</a></li>
+                                <li><a href="">Mes Cours</a></li>
+                                <li><a href="{{ path('logout') }}">Se déconnecter</a></li>
+                            </ul>
+                        </div>
+                    </ul>
+
+
                 {% else %}
                     <li> <a class="button" href="{{ path('login') }}">Se connecter</a></li>
                 {% endif %}
