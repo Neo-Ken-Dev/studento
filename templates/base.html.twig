@@ -16,30 +16,28 @@
         <nav>
             <a href="{{ path('index') }}"><img src="{{ asset('img/logo60x80.png') }}" alt="logoStudento" /></a>
             <ul>
-                <li><a href="">Tour</a></li>
-                <li><a href="">Cours</a></li>
-                <li><a href="">Contact</a></li>
+                <li class="nav_link"><a href="">Tour</a></li>
+                <li class="nav_link"><a href="">Cours</a></li>
+                <li class="nav_link"><a href="">Contact</a></li>
 
                 {%  if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-                    <ul class="dropdown">
-                        <span>Param</span>
-                        <div class="dropdown-content">
-                            <ul>
+                    <li class="dropdown nav_link">
+                        <a href="">Param</a>
+                            <ul class="dropdown-content">
                                 <li><a href="">Mon Profil</a></li>
                                 <li><a href="">Mes Cours</a></li>
                                 <li><a href="{{ path('logout') }}">Se déconnecter</a></li>
                             </ul>
-                        </div>
-                    </ul>
-
-
+                    </li>
                 {% else %}
                     <li> <a class="button" href="{{ path('login') }}">Se connecter</a></li>
+                    <li> <a class="button" href="{{ path('user_inscription') }}">S'enregistrer</a></li>
                 {% endif %}
             </ul>
         </nav>
     </header>
 
+    <hr>
     <hr>
 
     <main>
