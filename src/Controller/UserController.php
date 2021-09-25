@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\User;
 use App\Form\RegisterType;
 use Doctrine\ORM\EntityManagerInterface;
+use Psr\Container\ContainerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -37,15 +38,25 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/connexion", name="login")
+     * @Route("/MonProfil", name="my_profil")
      */
-    public function login() {
-        return $this->render("user/login.html.twig");
+    public function MyProfile()
+    {
+        $userConnected = $this->getUser();
+
+        $ShowProfileForm = $this->createForm(RegisterType::class, $userConnected);
+
+        return $this->render("user/myProfile.html.twig", ['userConnected' => $userConnected,
+            "ShowProfileForm" => $ShowProfileForm->createView()
+        ]);
     }
 
     /**
+     * @Route("/connexion", name="login")
+     */
+    public function login() {return $this->render("user/login.html.twig");}
+    /**
      * @Route("/logout", name="logout")
-     *
      */
     public function logout() {}
 }
