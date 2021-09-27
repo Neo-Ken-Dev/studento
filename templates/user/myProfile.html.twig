@@ -5,8 +5,10 @@
 {% block main %}
 
     {{ form_start(ShowProfileForm) }}
-
+    {{ form_widget(ShowProfileForm) }}
+    <button type="submit">Modifier</button>
     {{ form_end(ShowProfileForm) }}
+
 
 
 {% endblock %}

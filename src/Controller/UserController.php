@@ -40,11 +40,19 @@ class UserController extends AbstractController
     /**
      * @Route("/MonProfil", name="my_profil")
      */
-    public function MyProfile()
+    public function MyProfile(Request $request, EntityManagerInterface $em)
     {
         $userConnected = $this->getUser();
 
         $ShowProfileForm = $this->createForm(RegisterType::class, $userConnected);
+        $ShowProfileForm->remove('password');
+
+        $ShowProfileForm->handleRequest($request);
+        if ($ShowProfileForm->isSubmitted() && $ShowProfileForm->isValid()){
+
+            $em->persist($userConnected);
+            $em->flush();
+        }
 
         return $this->render("user/myProfile.html.twig", ['userConnected' => $userConnected,
             "ShowProfileForm" => $ShowProfileForm->createView()
