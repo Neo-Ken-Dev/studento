@@ -26,6 +26,13 @@
                             <ul class="dropdown-content">
                                 <li><a href="{{ path('my_profil') }}">Mon Profil</a></li>
                                 <li><a href="">Mes Cours</a></li>
+
+                                {% if is_granted('ROLE_STUDENT') %}
+                                    <li><a href="">Mes Cours suivis</a></li>
+                                {% endif %}
+                                {% if is_granted('ROLE_TEACHER') %}
+                                    <li><a href="">Mes Cours créés</a></li>
+                                {% endif %}
                                 <li><a href="{{ path('logout') }}">Se déconnecter</a></li>
                             </ul>
                     </li>
