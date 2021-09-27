@@ -7,6 +7,9 @@
         <form method="post">
             <h2>Connexion</h2>
 
+            {% if error %}
+                <div class="alert alert-danger">Identifiant incorrect</div>
+            {% endif %}
             <div>
                 <label for="loginUser">Identifiant :</label>
                 <input type="text" name="_username" id="loginUser" required autofocus>
