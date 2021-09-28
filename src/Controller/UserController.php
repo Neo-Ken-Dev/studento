@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Student;
 use App\Entity\User;
 use App\Form\RegisterType;
 use Doctrine\ORM\EntityManagerInterface;
@@ -19,7 +20,7 @@ class UserController extends AbstractController
      */
     public function register(Request $request, EntityManagerInterface $em, UserPasswordEncoderInterface $encoder) {
 
-        $user = new User();
+        $user = new Student();
         $registerForm = $this->createForm(RegisterType::class, $user);
 
         $registerForm->handleRequest($request);
@@ -72,4 +73,5 @@ class UserController extends AbstractController
      * @Route("/logout", name="logout")
      */
     public function logout() {}
+
 }
