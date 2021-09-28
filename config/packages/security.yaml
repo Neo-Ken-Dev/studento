@@ -2,9 +2,17 @@ security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         users_in_memory: { memory: null }
-        our_db_provider:
+
+        chain_provider:
+            chain:
+                providers: [ app_student_provider, app_teacher_provider ]
+        app_student_provider:
             entity:
-                class: App\Entity\User
+                class: App\Entity\Student
+                property: username
+        app_teacher_provider:
+            entity:
+                class: App\Entity\Teacher
                 property: username
     firewalls:
         dev:
@@ -12,7 +20,7 @@ security:
             security: false
         main:
             anonymous: lazy
-            provider: our_db_provider
+            provider: chain_provider
             form_login:
                 login_path: login
                 check_path: login
