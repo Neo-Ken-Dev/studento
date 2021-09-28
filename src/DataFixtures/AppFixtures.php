@@ -25,6 +25,30 @@ class AppFixtures extends Fixture
     {
         $faker = Factory::create('fr_FR');
 
+        $user = new Student();
+        $user->setLastname("Lemonnier");
+        $user->setFirstname("Ken");
+        $user->setUsername("kenL");
+        $user->setEmail("lemonnier.ken@gmail.com");
+        $password = $this->encoder->encodePassword($user, "1234");
+        $user->setPassword($password);
+        $user->setRoles(array("ROLE_ADMIN"));
+        $user->setDegree("CM2");
+
+        $manager->persist($user);
+
+        $user2 = new Teacher();
+        $user2->setLastname("Fenestre");
+        $user2->setFirstname("Dorian");
+        $user2->setUsername("fenD");
+        $user2->setEmail("fenestre.dorian@free.fr");
+        $password = $this->encoder->encodePassword($user2, "12345");
+        $user2->setPassword($password);
+        $user2->setRoles(array("ROLE_ADMIN"));
+        $user2->setSpeciality("Histoire");
+
+        $manager->persist($user2);
+
         for ($i=0; $i < 10; $i++) {
             $student = new Student();
             $student->setLastname($faker->lastName())
