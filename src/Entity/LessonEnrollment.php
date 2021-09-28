@@ -33,6 +33,38 @@ class LessonEnrollment
     protected $student;
 
     /**
+     * @return mixed
+     */
+    public function getStudent()
+    {
+        return $this->student;
+    }
+
+    /**
+     * @param mixed $student
+     */
+    public function setStudent($student): void
+    {
+        $this->student = $student;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLesson()
+    {
+        return $this->lesson;
+    }
+
+    /**
+     * @param mixed $lesson
+     */
+    public function setLesson($lesson): void
+    {
+        $this->lesson = $lesson;
+    }
+
+    /**
      * @ORM\ManyToOne(targetEntity=Lesson::class)
      */
     protected $lesson;
